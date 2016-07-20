@@ -61,3 +61,7 @@ echo "set -g theme_powerline_fonts yes" >> ~/.config/fish/config.fish
 # Install Powerline fonts
 echo "Installing Powerline fonts --> this will take awhile"
 (cd ${HOME}/Workspaces && git clone git@github.com:powerline/fonts.git && cd fonts && bash ./install.sh)
+
+# Install irssi
+echo "Installing IRSSI"
+brew install irssi
