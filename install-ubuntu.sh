@@ -19,6 +19,7 @@ echo "Installing Git Configuration"
 git config --global color.ui true
 git config --global user.name "enpfeff"
 git config --global user.email "enpfeff@gmail.com"
+source ./git/git-aliases.sh
 
 # Install Fish
 sudo apt-add-repository ppa:fish-shell/release-2
