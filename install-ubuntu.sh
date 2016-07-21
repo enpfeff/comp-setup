@@ -38,9 +38,10 @@ curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 # Install Oh My Fish
 echo "Installing Oh My Fish"
 curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install
-fish install&
-echo "Waiting for fish to install"
-sleep 30
+echo "------------------------------------------------------------------------------------"
+echo "-------------------IMPORTANT EXIT THE FISH SHELL AFTER THIS LOADS-------------------"
+echo "------------------------------------------------------------------------------------"
+fish install
 rm -f install
 
 # Install bob the fish theme
