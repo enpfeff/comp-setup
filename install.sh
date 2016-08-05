@@ -28,6 +28,7 @@ brew install git
 git config --global color.ui true
 git config --global user.name "enpfeff"
 git config --global user.email "enpfeff@gmail.com"
+source ./git/git-aliases.sh
 
 # Installing Fish
 echo "Installing Fish"
