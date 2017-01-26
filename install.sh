@@ -37,7 +37,6 @@ echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 mkdir -p ~/.config/fish
 touch ~/.config/fish/config.fish
-echo "set -g -x PATH /usr/local/bin $PATH" >>  ~/.config/fish/config.fish
 echo "set -g -x fish_greeting 'Hello enpfeff'" >> ~/.config/fish/config.fish
 
 # Install Fisherman
