@@ -93,26 +93,31 @@ bindsym $mod+a focus parent
 
 set $code "1: Code"
 set $chrome "2: Chrome"
-set $chat "3: Slack"
+set $chat "3: Chat"
 set $music "9: Spotify"
+set $chat2 "8: Discord"
+set $CLI "4: CLI"
 
-set $primary "DP-4"
-set $secondary "DP-2"
+set $primary "DP-2"
+set $secondary "DP-0"
+set $thirdary "DP-4"
 
-workspace $code output $secondary
-workspace $chat output $secondary
-workspace $chrome output $primary
-workspace $music output $primary
+workspace $code output $primary
+workspace $chat output $thirdary
+workspace $chat2 output $thirdary
+workspace $CLI output $thirdary
+workspace $chrome output $secondary
+workspace $music output $secondary
 
 # switch to workspace
 bindsym $mod+1 workspace $code
 bindsym $mod+2 workspace $chrome
 bindsym $mod+3 workspace $chat
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace $CLI
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
+bindsym $mod+8 workspace $chat2
 bindsym $mod+9 workspace $music
 bindsym $mod+0 workspace 10
 
@@ -120,18 +125,21 @@ bindsym $mod+0 workspace 10
 bindsym $mod+Shift+1 move container to workspace $code
 bindsym $mod+Shift+2 move container to workspace $chrome
 bindsym $mod+Shift+3 move container to workspace $chat
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+4 move container to workspace $CLI
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+8 move container to workspace $chat2
 bindsym $mod+Shift+9 move container to workspace $music
 bindsym $mod+Shift+0 move container to workspace 10
 
 for_window [class="Spotify"] move to workspace $music
-assign [class="Chromium"] $chrome
+assign [class="Google-chrome"] $chrome
 assign [class="jetbrains-webstorm"] $code
+assign [class="jetbrains-idea"] $code
+assign [class="Rocket.Chat+"] $chat
 assign [class="Slack"] $chat
+assign [class="discord"] $chat2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -208,7 +216,7 @@ bindsym --release Mod1+Sys_Req exec --no-startup-id scrot -s -e '/home/enpfeff/c
 focus_follows_mouse no
 
 # Monitor Position
-exec_always xrandr --output DVI-D-0 --off --output HDMI-0 --off --output DP-5 --off --output DP-4 --mode 2560x1440 --pos 1920x0 --rotate normal --output DP-3 --off --output DP-2 --mode 1920x1200 --pos 0x112 --rotate normal --output DP-1 --off --output DP-0 --off 
+exec_always xrandr --output DVI-D-0 --off --output HDMI-0 --off --output DP-5 --off --output DP-4 --mode 1920x1200 --pos 0x112 --rotate normal --output DP-3 --off --output DP-2 --mode 2560x1440 --pos 1920x0 --rotate normal --output DP-1 --off --output DP-0 --mode 1920x1200 --pos 4480x112 --rotate normal 
 
 # Background
 exec_always feh --bg-fill /home/enpfeff/Pictures/wallpaper.jpg
@@ -216,7 +224,10 @@ exec_always --no-startup-id setxkbmap -option caps:super
 exec compton -f
 
 exec --no-startup-id spotify
-exec --no-startup-id webstorm.sh
-exec --no-startup-id chromium
+#exec --no-startup-id webstorm.sh
+exec --no-startup-id google-chrome-stable
+exec --no-startup-id rocketchat
+exec --no-startup-id idea.sh
+exec --no-startup-id discord
 exec slack
 
