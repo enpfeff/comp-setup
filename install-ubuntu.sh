@@ -46,7 +46,7 @@ rm -f install
 
 # Install bob the fish theme
 echo "Installing theme for Fish"
-echo "omf install bobthefish" | fish
+echo "omf install agnoster" | fish
 echo "# Personal" >> ~/.config/fish/config.fish
 echo "set -g theme_nerd_fonts yes" >> ~/.config/fish/config.fish
 echo "set -g theme_color_scheme solarized" >> ~/.config/fish/config.fish
