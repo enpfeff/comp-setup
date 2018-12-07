@@ -11,8 +11,8 @@ cp -rf vimrc ${HOME}/.vimrc
 
 # Install Workspaces
 echo "Installing Workspaces to:"
-echo "${HOME}/Workspaces"
-mkdir -p ${HOME}/Workspaces
+echo "${HOME}/code"
+mkdir -p ${HOME}/code
 
 # Install Git Config
 echo "Installing Git Configuration"
@@ -55,5 +55,5 @@ echo "set -g theme_powerline_fonts yes" >> ~/.config/fish/config.fish
 
 # Install Powerline fonts
 echo "Installing Powerline fonts --> this will take awhile"
-(cd ${HOME}/Workspaces && git clone git@github.com:powerline/fonts.git && cd fonts && bash ./install.sh)
+(cd ${HOME}/code && git clone git@github.com:powerline/fonts.git && cd fonts && bash ./install.sh)
 
